@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   Bureaucrat.cpp                                     :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: shkaruna <shkaruna@student.42.fr>          +#+  +:+       +#+        */
+/*   By: shehanihansika <shehanihansika@student.    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/06/20 11:01:30 by shkaruna          #+#    #+#             */
-/*   Updated: 2025/06/20 13:55:39 by shkaruna         ###   ########.fr       */
+/*   Updated: 2025/06/23 11:42:15 by shehanihans      ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -55,4 +55,14 @@ Bureaucrat& Bureaucrat::operator=(const Bureaucrat& other)
 Bureaucrat::~Bureaucrat()
 {
 	std::cout << "Destructor called for " << this->name << std::endl;
+}
+
+const char* Bureaucrat::GradeTooHighException::what() const throw()
+{
+	return "Grade is too high!";
+}
+
+const char* Bureaucrat::GradeTooLowException::what() const throw()
+{
+	return "Grade is too low!";
 }
