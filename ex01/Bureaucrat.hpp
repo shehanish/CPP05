@@ -6,7 +6,7 @@
 /*   By: shkaruna <shkaruna@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/06/20 11:01:33 by shkaruna          #+#    #+#             */
-/*   Updated: 2025/06/24 15:25:14 by shkaruna         ###   ########.fr       */
+/*   Updated: 2025/06/26 15:44:13 by shkaruna         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -17,7 +17,10 @@
 #include <string>
 #include <exception> // Needed for std::exception
 #include <cstdlib>
+#include "Form.hpp"
 
+
+class Form; 
 
 class Bureaucrat
 {
@@ -36,6 +39,7 @@ class Bureaucrat
 		
 		std::string getName() const;
 		int getGrade() const;
+		void signForm(Form& form);
 
 		
 		class GradeTooHighException : public std::exception

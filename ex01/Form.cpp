@@ -6,7 +6,7 @@
 /*   By: shkaruna <shkaruna@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/06/24 15:40:31 by shkaruna          #+#    #+#             */
-/*   Updated: 2025/06/24 17:51:45 by shkaruna         ###   ########.fr       */
+/*   Updated: 2025/06/26 14:39:31 by shkaruna         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -49,3 +49,39 @@ const char* Form::GradeTooLowException::what() const throw()
 	return "Grade is too low!";
 }
 
+std::string Form::getName() const
+{
+	return name;
+}
+
+bool  Form::isFormSigned() const
+{
+	return this->isSigned;
+}
+
+int	 Form::getGradeTosign() const
+{
+	return gradeToSign;
+}
+
+int  Form::getGradeToExecute() const
+{
+	return gradeToExecute;
+}
+
+
+void	Form::beSigned(const Bureaucrat& bureaucrat)
+{
+	if(bureaucrat.getGrade() > gradeToSign)
+		throw GradeTooLowException();
+	isSigned = true;
+}
+
+std::ostream& operator<<(std::ostream& out, const Form& a)
+{
+	out << "Form: " << a.getName()
+	    << ", grade to sign: " << a.getGradeTosign()
+	    << ", grade to execute: " << a.getGradeToExecute()
+	    << ", signed: " << (a.isFormSigned() ? "yes" : "no");
+	return out;
+}
