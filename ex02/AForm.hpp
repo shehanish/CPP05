@@ -1,37 +1,39 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   Form.hpp                                           :+:      :+:    :+:   */
+/*   AForm.hpp                                          :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: shkaruna <shkaruna@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2025/06/24 15:40:37 by shkaruna          #+#    #+#             */
-/*   Updated: 2025/10/20 10:46:05 by shkaruna         ###   ########.fr       */
+/*   Created: 2025/10/20 15:07:58 by shkaruna          #+#    #+#             */
+/*   Updated: 2025/10/20 15:49:56 by shkaruna         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#ifndef FORM_HPP
-#define FORM_HPP
+
+#ifndef AFORM_HPP
+#define AFORM_HPP
 
 #include <string>
 #include "Bureaucrat.hpp"
 
 class Bureaucrat;
 
-class Form
+class AForm
 {
-	private:
+	protected:
 		const std::string 	name;
 		bool 			  	isSigned;
 		const int 		  	gradeToSign;
 		const int		  	gradeToExecute;
 		
+		virtual	void executeAction() const = 0;
 	
 	public:
-		Form(const std::string& name, int gradeToSign, int gradeToExecute);
-		Form(const Form& other);
-		Form& operator=(const Form& other);
-		~Form();
+		AForm(const std::string& name, int gradeToSign, int gradeToExecute);
+		AForm(const AForm& other);
+		AForm& operator=(const AForm& other);
+		~AForm();
 
 		std::string getName() const;
 		bool isFormSigned() const;
@@ -52,8 +54,15 @@ class Form
 				const char*  what() const throw();
 		};
 
+		class	FormNotSignedException : public std::exception
+		{
+			public:
+				const char* what() const throw();
+		};
+		
+		void	execute(Bureaucrat const &executor) const;
 };
 
-std::ostream& operator<<(std::ostream& out, const Form& a);
+std::ostream& operator<<(std::ostream& out, const AForm& a);
 
 #endif

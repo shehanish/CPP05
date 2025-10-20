@@ -6,7 +6,7 @@ NAME    := bureaucrat
 CXX     := c++
 CXXFLAGS := -Wall -Wextra -Werror -std=c++98
 
-SRC     := main.cpp Bureaucrat.cpp Form.cpp
+SRC     := main.cpp Bureaucrat.cpp AForm.cpp
 OBJ     := $(SRC:.cpp=.o)
 HEADER  := Bureaucrat.hpp
 

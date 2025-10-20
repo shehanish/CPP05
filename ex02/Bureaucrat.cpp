@@ -5,10 +5,11 @@
 /*                                                    +:+ +:+         +:+     */
 /*   By: shkaruna <shkaruna@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2025/06/20 11:01:30 by shkaruna          #+#    #+#             */
-/*   Updated: 2025/10/20 10:44:26 by shkaruna         ###   ########.fr       */
+/*   Created: 2025/10/20 15:06:33 by shkaruna          #+#    #+#             */
+/*   Updated: 2025/10/20 15:17:40 by shkaruna         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
+
 
 #include "Bureaucrat.hpp"
 
@@ -79,7 +80,7 @@ std::ostream& operator<<(std::ostream& out, const Bureaucrat& a)
 	return(out);
 }
 
-void Bureaucrat::signForm(Form& form) {
+void Bureaucrat::signForm(AForm& form) {
     try {
         form.beSigned(*this); // Try to sign the form
         std::cout << name << " signed " << form.getName() << std::endl;
