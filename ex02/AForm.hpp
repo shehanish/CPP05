@@ -6,7 +6,7 @@
 /*   By: shkaruna <shkaruna@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/10/20 15:07:58 by shkaruna          #+#    #+#             */
-/*   Updated: 2025/10/20 15:49:56 by shkaruna         ###   ########.fr       */
+/*   Updated: 2025/10/21 16:07:41 by shkaruna         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -21,16 +21,18 @@ class Bureaucrat;
 
 class AForm
 {
-	protected:
+	private:
 		const std::string 	name;
 		bool 			  	isSigned;
 		const int 		  	gradeToSign;
 		const int		  	gradeToExecute;
+		std::string			target;
 		
+	protected:
 		virtual	void executeAction() const = 0;
 	
 	public:
-		AForm(const std::string& name, int gradeToSign, int gradeToExecute);
+		AForm(const std::string& name, const std::string& target, int gradeToSign, int gradeToExecute);
 		AForm(const AForm& other);
 		AForm& operator=(const AForm& other);
 		~AForm();
@@ -39,6 +41,7 @@ class AForm
 		bool isFormSigned() const;
 		int  getGradeTosign() const;
 		int  getGradeToExecute() const;
+		std::string	getTarget() const;
 		
 		void	beSigned(const Bureaucrat& bureaucrat);
 		

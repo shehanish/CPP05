@@ -6,14 +6,14 @@
 /*   By: shkaruna <shkaruna@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/10/20 15:07:24 by shkaruna          #+#    #+#             */
-/*   Updated: 2025/10/20 16:02:04 by shkaruna         ###   ########.fr       */
+/*   Updated: 2025/10/21 14:46:02 by shkaruna         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "AForm.hpp"
 #include "Bureaucrat.hpp"
 
-AForm::AForm(const std::string& name, int gradeToSign, int gradeToExecute)
+AForm::AForm(const std::string& name, const std::string& target, int gradeToSign, int gradeToExecute)
 	: name(name), isSigned(false), gradeToSign(gradeToSign), gradeToExecute(gradeToExecute)
 {
 	if(gradeToSign < 1 || gradeToExecute < 1)

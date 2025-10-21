@@ -6,7 +6,7 @@
 /*   By: shkaruna <shkaruna@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/10/20 15:07:02 by shkaruna          #+#    #+#             */
-/*   Updated: 2025/10/20 15:16:33 by shkaruna         ###   ########.fr       */
+/*   Updated: 2025/10/21 14:47:45 by shkaruna         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -41,6 +41,7 @@ class Bureaucrat
 		std::string getName() const;
 		int getGrade() const;
 		void signForm(AForm& form);
+		void executeForm(AForm const& form) const;
 
 		
 		class GradeTooHighException : public std::exception

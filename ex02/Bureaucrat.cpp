@@ -6,7 +6,7 @@
 /*   By: shkaruna <shkaruna@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/10/20 15:06:33 by shkaruna          #+#    #+#             */
-/*   Updated: 2025/10/20 15:17:40 by shkaruna         ###   ########.fr       */
+/*   Updated: 2025/10/21 15:01:47 by shkaruna         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -34,8 +34,6 @@ Bureaucrat::Bureaucrat(const Bureaucrat& other) : name(other.name), grade(other.
 {
 	std::cout << "copy constructor called" << std::endl;
 }
-
-
 
 Bureaucrat& Bureaucrat::operator=(const Bureaucrat& other)
 {
@@ -88,4 +86,19 @@ void Bureaucrat::signForm(AForm& form) {
         std::cout << name << " couldn’t sign " << form.getName()
                   << " because " << e.what() << std::endl;
     }
+}
+
+void	Bureaucrat::executeForm(AForm const& form) const
+{
+	try
+	{
+		form.execute(*this);
+		std::cout << name << " executed" << form.getName() << std::endl;
+	}
+	catch(const std::exception& e)
+	{
+		std::cout << name << " couldn't execute " << form.getName()
+					<< " because " << e.what() << std::endl;
+	}
+		
 }
