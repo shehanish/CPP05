@@ -6,7 +6,7 @@
 /*   By: shkaruna <shkaruna@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/10/20 15:06:33 by shkaruna          #+#    #+#             */
-/*   Updated: 2025/11/04 16:22:01 by shkaruna         ###   ########.fr       */
+/*   Updated: 2025/11/03 14:33:56 by shkaruna         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -70,20 +70,6 @@ std::string Bureaucrat::getName() const
 int Bureaucrat::getGrade() const 
 {
 	return grade;
-}
-
-void Bureaucrat::incrementGrade()
-{
-	if (grade - 1 < 1)
-		throw GradeTooHighException();
-	grade--;
-}
-
-void Bureaucrat::decrementGrade()
-{
-	if (grade + 1 > 150)
-		throw GradeTooLowException();
-	grade++;
 }
 
 std::ostream& operator<<(std::ostream& out, const Bureaucrat& a)

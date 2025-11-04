@@ -8,11 +8,11 @@ CXXFLAGS := -Wall -Wextra -Werror -std=c++98
 
 SRC     := main.cpp Bureaucrat.cpp AForm.cpp \
            ShrubberyCreationForm.cpp RobotomyRequestForm.cpp \
-           PresidentialPardonForm.cpp
+           PresidentialPardonForm.cpp Intern.cpp
 OBJ     := $(SRC:.cpp=.o)
 HEADER  := Bureaucrat.hpp AForm.hpp \
            ShrubberyCreationForm.hpp RobotomyRequestForm.hpp \
-           PresidentialPardonForm.hpp
+           PresidentialPardonForm.hpp Intern.hpp
 
 # Colors
 GREEN   := \033[0;32m

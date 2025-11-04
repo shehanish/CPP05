@@ -6,7 +6,7 @@
 /*   By: shkaruna <shkaruna@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/06/20 11:01:33 by shkaruna          #+#    #+#             */
-/*   Updated: 2025/06/26 15:44:13 by shkaruna         ###   ########.fr       */
+/*   Updated: 2025/11/04 15:49:09 by shkaruna         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -20,7 +20,7 @@
 #include "Form.hpp"
 
 
-class Form; 
+class Form; //solving circulr dependencies
 
 class Bureaucrat
 {
@@ -37,18 +37,18 @@ class Bureaucrat
 		~Bureaucrat(); // Destructor
 
 		
-		std::string getName() const;
-		int getGrade() const;
-		void signForm(Form& form);
+	std::string getName() const;
+	int getGrade() const;
+	void incrementGrade(); // Increases grade (decreases number)
+	void decrementGrade(); // Decreases grade (increases number)
+	void signForm(Form& form);
 
-		
-		class GradeTooHighException : public std::exception
-		{
-			public:
-				const char* what() const throw(); // Override std::exception::what()
-		};
-
-		class GradeTooLowException : public std::exception
+	
+	class GradeTooHighException : public std::exception
+	{
+		public:
+			const char* what() const throw(); // Override std::exception::what()
+	};		class GradeTooLowException : public std::exception
 		{
 			public:
 				const char* what() const throw(); // Override std::exception::what()

@@ -6,7 +6,7 @@
 /*   By: shkaruna <shkaruna@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/10/20 15:07:58 by shkaruna          #+#    #+#             */
-/*   Updated: 2025/11/04 16:22:01 by shkaruna         ###   ########.fr       */
+/*   Updated: 2025/11/03 14:46:50 by shkaruna         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -32,12 +32,12 @@ class AForm
 		virtual	void executeAction() const = 0;
 	
 	public:
-	AForm(const std::string& name, const std::string& target, int gradeToSign, int gradeToExecute);
-	AForm(const AForm& other);
-	AForm& operator=(const AForm& other);
-	virtual ~AForm();
+		AForm(const std::string& name, const std::string& target, int gradeToSign, int gradeToExecute);
+		AForm(const AForm& other);
+		AForm& operator=(const AForm& other);
+		virtual ~AForm();
 
-	std::string getName() const;
+		std::string getName() const;
 		bool isFormSigned() const;
 		int  getGradeTosign() const;
 		int  getGradeToExecute() const;

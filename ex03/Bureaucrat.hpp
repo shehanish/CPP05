@@ -6,7 +6,7 @@
 /*   By: shkaruna <shkaruna@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/10/20 15:07:02 by shkaruna          #+#    #+#             */
-/*   Updated: 2025/11/04 16:22:01 by shkaruna         ###   ########.fr       */
+/*   Updated: 2025/10/21 14:47:45 by shkaruna         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -38,13 +38,12 @@ class Bureaucrat
 		~Bureaucrat(); // Destructor
 
 		
-	
-	std::string getName() const;
-	int getGrade() const;
-	void incrementGrade();
-	void decrementGrade();
-	void signForm(AForm& form);
-	void executeForm(AForm const& form) const;		
+		std::string getName() const;
+		int getGrade() const;
+		void signForm(AForm& form);
+		void executeForm(AForm const& form) const;
+
+		
 		class GradeTooHighException : public std::exception
 		{
 			public:
